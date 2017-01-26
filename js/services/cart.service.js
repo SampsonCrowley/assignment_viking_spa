@@ -40,7 +40,7 @@ vikingStore.factory('cartService', [
       if (_cart[id]) {
         _count -= 1;
         delete _cart[id];
-        if (_count < 0) _count = 0; 
+        if (_count < 0) _count = 0;
       }
     }
 
@@ -52,11 +52,19 @@ vikingStore.factory('cartService', [
       return _count;
     }
 
+    var modifyItem = function modifyItem(id, direction){
+      _cart[id].count += (direction ? 1 : -1);
+      if(_cart[id].count <= 0){
+        removeItem(id);
+      }
+    }
+
     return {
       add: addItem,
       remove: removeItem,
       list: listItems,
-      count: itemCount
+      count: itemCount,
+      modify: modifyItem
     }
   }
 ])

@@ -3,12 +3,13 @@
     <span>Choose from among our lineup of fine axes below</span>
   </div>
 </div>
-<div>
+<div class="cart">
   <div class="container">
     <section>
-      <table>
+      <table class="table">
         <thead>
           <tr>
+            <th></th>
             <th>Product</th>
             <th>Quantity</th>
             <th>Price</th>
@@ -16,13 +17,23 @@
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="(id, item) in cart">
+          <tr ng-repeat="(id, item) in cart | sumCart:total">
+            <td><span class="up" ng-click="modifyItem(id, true)">&#8679;</span><span class="down" ng-click="modifyItem(id, false)">&#8681;</span></td>
             <td>{{ item.product.title }}</td>
             <td>{{ item.count }}</td>
             <td>{{ item.product.price | currency }}</td>
-            <td>{{ item.product.price * item.count | currency }}</td>
+            <td>{{ (item.product.price * item.count) | currency }}</td>
           </tr>
         </tbody>
+        <tfoot>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Total:</td>
+            <td>{{ total.value | currency }}</td>
+          </tr>
+        </tfoot>
       </table>
     </section>
   </div>
