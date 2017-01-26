@@ -1,6 +1,6 @@
-vikingStore.factory('cartService',[
-  '$q',
-  function($q){
+vikingStore.factory('cartService', [
+  '$q', 'productService',
+  function($q, productService){
     var _cart = {}, _count = 0;
 
     var newItemObj = function newItemObj(item){
@@ -16,16 +16,32 @@ vikingStore.factory('cartService',[
     var addItem = function addItem(itemData){
       var item = newItemObj(itemData);
       if(item){
-        if(!_cart[item.id]) _cart[item.id] = 0;
-        _cart[item.id] += item.count;
-        _count += item.count;
+        if(!_cart[item.id]) {
+          _cart[item.id] = {
+            id: item.id,
+            count: 0,
+            product: {}
+          };
+          getProduct(_cart[item.id]);
+          _count += 1;
+        }
+        _cart[item.id].count += item.count;
         return true;
       }
     }
 
+    var getProduct = function getProduct(cartItem) {
+      productService.find(cartItem.id).then(function(product) {
+        cartItem.product = product;
+      });
+    }
+
     var removeItem = function removeItem(id){
-      _count -= _cart[id];
-      delete _cart[id];
+      if (_cart[id]) {
+        _count -= 1;
+        delete _cart[id];
+        if (_count < 0) _count = 0; 
+      }
     }
 
     var listItems = function listItems(){

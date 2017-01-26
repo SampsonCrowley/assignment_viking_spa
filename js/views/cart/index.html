@@ -3,10 +3,27 @@
     <span>Choose from among our lineup of fine axes below</span>
   </div>
 </div>
-<div class="inventory">
+<div>
   <div class="container">
-    <section class="item" ng-repeat="(id, product) in products | objArray | category:selectedCategory">
-      {{ product }}
+    <section>
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="(id, item) in cart">
+            <td>{{ item.product.title }}</td>
+            <td>{{ item.count }}</td>
+            <td>{{ item.product.price | currency }}</td>
+            <td>{{ item.product.price * item.count | currency }}</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
   </div>
 </div>
