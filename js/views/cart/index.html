@@ -1,0 +1,12 @@
+<div class="CTA">
+  <div class="container">
+    <span>Choose from among our lineup of fine axes below</span>
+  </div>
+</div>
+<div class="inventory">
+  <div class="container">
+    <section class="item" ng-repeat="(id, product) in products | objArray | category:selectedCategory">
+      {{ product }}
+    </section>
+  </div>
+</div>

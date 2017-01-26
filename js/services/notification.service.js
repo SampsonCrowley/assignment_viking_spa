@@ -1,13 +1,20 @@
 vikingStore.factory('notificationService', [
-  '$timeout', 'vikingStoreNotification',
-  function($timeout, vikingStoreNotification){
+  '$timeout',
+  function($timeout){
+    var notice = {}
     var notify = function(msg) {
-      vikingStoreNotification = msg;
+      notice.msg = null;
       $timeout(function() {
-        vikingStoreNotification = null;
-      }, 2000);
+        notice.msg = msg;
+        $timeout(function() {
+          notice.msg = null;
+        }, 2000);
+      }, 50);
     }
+    notify.notice = function(){
+      return notice;
+    };
 
-    return notify; 
+    return notify;
   }
 ])

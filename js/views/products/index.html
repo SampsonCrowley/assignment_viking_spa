@@ -3,11 +3,11 @@
     <span>Choose from among our lineup of fine axes below</span>
   </div>
 </div>
-<div class=inventory>
-  <div class=container>
+<div class="inventory">
+  <div class="container">
     <categories model="selectedCategory"></categories>
   </div>
-  <div class=container>
-    <section class=item ng-repeat="(id, product) in products | objArray | category:selectedCategory" product="product"></section>
+  <div class="container">
+    <section class="item" ng-repeat="(id, product) in products | objArray | category:selectedCategory" product="product"></section>
   </div>
 </div>

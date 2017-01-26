@@ -1,6 +1,5 @@
 var vikingStore = angular.module("vikingStore",['ui.router'])
-  .constant('_', window._)
-  .value('vikingStoreNotification', null);
+  .constant('_', window._);
 
 vikingStore.config([
   '$stateProvider', '$urlRouterProvider',
