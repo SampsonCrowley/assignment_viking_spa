@@ -1,0 +1,5 @@
+vikingStore.factory('productService', [
+  function(){
+    
+  }
+])
