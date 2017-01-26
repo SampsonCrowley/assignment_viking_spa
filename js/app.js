@@ -1,4 +1,6 @@
-var vikingStore = angular.module("vikingStore",['ui.router']).constant('_', window._);
+var vikingStore = angular.module("vikingStore",['ui.router'])
+  .constant('_', window._)
+  .value('vikingStoreNotification', null);
 
 vikingStore.config([
   '$stateProvider', '$urlRouterProvider',
@@ -20,6 +22,11 @@ vikingStore.config([
         url: '/:id',
         templateUrl: '/js/views/products/show.html',
         controller: 'ProductShowCtrl'
+      })
+      .state('cart', {
+        url: '/cart',
+        templateUrl: '/js/views/cart/index.html',
+        controller: 'CartIndexCtrl'
       })
   }
 ])

@@ -18,20 +18,22 @@ vikingStore.factory('cartService',[
       if(item){
         if(!_cart[item.id]) _cart[item.id] = 0;
         _cart[item.id] += item.count;
+        _count += item.count;
         return true;
       }
     }
 
-    var removeItem = function removeItem(item.id){
-      delete _cart[item.id];
+    var removeItem = function removeItem(id){
+      _count -= _cart[id];
+      delete _cart[id];
     }
 
     var listItems = function listItems(){
-
+      return _cart;
     }
 
     var itemCount = function itemCount(){
-
+      return _count;
     }
 
     return {
