@@ -186,7 +186,7 @@ footer .title {
   font-size:30px;
   color: #F6B26B;
   color:sandybrown;
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
 }
 footer .email, footer .phone {
   display: flex;
@@ -210,4 +210,117 @@ footer .email, footer .phone {
     vertical-align: top;
     line-height: 1;
     margin-left: 20px;
+}
+
+/*product-detail .price,
+product-detail .title,
+product-detail .image,
+product-detail .product-description {
+  position: relative;
+  top:auto;
+  left: auto;
+  right: auto;
+  bottom: auto;
+  z-index: 0;
+}*/
+product-detail{
+  position:relative;
+  display: inline-block;
+  width:100%;
+  background: #333;
+  margin-bottom:40px;
+  min-height: 50vh;
+  padding-bottom: 50px;
+}
+
+product-detail .title {
+  height:50px;
+  color: #fff;
+  font-size: 30px;
+  text-align: center;
+  width: 100%;
+  padding-top:10px;
+}
+product-detail .price,
+product-detail .image,
+product-detail .product-description {
+  vertical-align: top;
+  display: inline-block;
+}
+product-detail .price {
+  background: #FFF;
+  padding:20px;
+  border: 2px solid #333;
+  width: 100px;
+  text-align: center;
+}
+
+product-detail .image {
+  position: relative;
+  max-width: calc(50% - 100px);
+  margin-left: 10px;
+}
+
+product-detail .product-description {
+  border: 2px solid #333;
+  width: calc(50% - 110px);
+  color:#fff;
+  padding: 0 20px;
+}
+product-detail .product-description p {
+  padding: 0;
+  margin: 0;
+}
+
+product-detail button{
+  height: 30px;
+  width: 140px;
+  background: #F6B26B;
+  background: sandybrown;
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+  border: 3px solid #000;
+  text-align: center;
+  outline:0;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+product-detail button:active, product-detail button:focus {
+  outline:0;
+  border:0;
+}
+product-detail button:active {
+  border-top: 2px solid #444;
+  border-left: 2px solid #444;
+}
+
+product-detail input{
+  height: 30px;
+  width: 140px;
+  font-size: 16px;
+  font-weight: bold;
+  border: 3px solid #000;
+  text-align: center;
+  outline:0;
+  position: absolute;
+  bottom: 10px;
+  right: 160px;
+  box-sizing: border-box;
+}
+
+product-detail label{
+  height: 30px;
+  width: 140px;
+  font-size: 20px;
+  padding: 5px 0;
+  font-weight: bold;
+  color: #fff;
+  text-align: right;
+  outline:0;
+  position: absolute;
+  bottom: 10px;
+  right: 310px;
+  box-sizing: border-box;
 }

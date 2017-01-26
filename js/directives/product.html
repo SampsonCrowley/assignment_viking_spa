@@ -1,4 +1,4 @@
-<div class="price">{{ product.price }}</div>
+<div class="price">{{ product.price | currency:USD:0 }}</div>
 <div class=title>{{ product.title }}</div>
-<img class="image" ng-src="{{ product.img }}">
+<a ui-sref='products.show({ id: product.id })'><img class="image" ng-src="{{ product.img }}"></a>
 <button type="button" data-id="{{ product.id }}">Add to Cart</button>

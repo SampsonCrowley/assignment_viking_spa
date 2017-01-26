@@ -1,0 +1,4 @@
+<select class="categories" ng-model="model">
+  <option value="">--</option>
+  <option ng-repeat="(id, category) in categories" value="{{ id }}">{{ category.name }}</option>
+</select>

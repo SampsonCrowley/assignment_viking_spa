@@ -1,0 +1,13 @@
+<section>
+  <div class=title>{{ product.title }}</div>
+  <img class="image" ng-src="{{ product.img }}">
+  <div class="product-description">
+    <p>{{ product.description }}</p>
+  </div>
+  <div class="price">{{ product.price | currency:USD:0 }}</div>
+  <form>
+    <label for="product-quantity-{{product.id}}">Quantity: </label>
+    <input id="product-quantity-{{product.id}}" type="number" name="quantity" ng-model="newItem.quantity">
+    <button type="button" data-id="{{ product.id }}">Add to Cart</button>
+  </form>
+</section>

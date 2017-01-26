@@ -3,5 +3,10 @@
     "id":1,
     "name": "axes",
     "products": [1,2,3,4,5,6]
+  },
+  "2":{
+    "id":2,
+    "name": "swords",
+    "products": [7,8,9,10,11]
   }
 }

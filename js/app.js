@@ -1,8 +1,7 @@
-var vikingStore = angular.module("vikingStore",['ui-router'])
-  .constant('_', window._)
+var vikingStore = angular.module("vikingStore",['ui.router']).constant('_', window._);
 
-vikingStore.config(
-  ['$stateProvider', '$urlRouterProvider'
+vikingStore.config([
+  '$stateProvider', '$urlRouterProvider',
   function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/products');
 
@@ -12,10 +11,18 @@ vikingStore.config(
         abstract: true,
         template: '<div ui-view></div>'
       })
-      .state('products.index' {
+      .state('products.index', {
         url: '',
         templateUrl: '/js/views/products/index.html',
         controller: 'ProductIndexCtrl'
       })
+      .state('products.show', {
+        url: '/:id',
+        templateUrl: '/js/views/products/show.html',
+        controller: 'ProductShowCtrl'
+      })
   }
 ])
+vikingStore.run(function($rootScope){
+  $rootScope.$on("$stateChangeError", console.log.bind(console));
+});

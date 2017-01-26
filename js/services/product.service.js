@@ -17,8 +17,25 @@ vikingStore.factory('productService', [
       });
     }
 
+    var findProduct = function findProduct(id){
+      return _products[id];
+    }
+
+    var getProduct = function getProduct(id) {
+      if (_.isEmpty(_products)) {
+        return getProducts().then(function(){
+          return findProduct(id)
+        })
+      }
+
+      return $q(function(resolve) {
+        resolve(findProduct(id));
+      });
+    }
+
     return {
-      all: getProducts
+      all: getProducts,
+      find: getProduct
     }
   }
 ])
