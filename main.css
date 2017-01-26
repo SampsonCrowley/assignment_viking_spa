@@ -1,0 +1,213 @@
+body{
+  padding:0;
+  margin:0;
+  position:relative;
+  min-height:100vh;
+  width:100%;
+  font: 20px arial, san-serif;
+}
+header{
+  position:fixed;
+  width:100%;
+  top:0;
+  left:0;
+  height:40px;
+  line-height: 1;
+  border-bottom: 2px solid #000;
+  z-index:100;
+  background:#fff;
+}
+.container {
+  max-width: 960px;
+  margin:auto;
+}
+.logo, .nav-cart div {
+    margin-top: 10px;
+    display: inline-block;
+    margin-left: 10px;
+}
+.nav-cart div{
+  margin-right: 10px;
+}
+.nav-cart div.img{
+    background: url(https://s3.amazonaws.com/viking_education/demos/viking_store_app/icon_empty_cart.png) center no-repeat;
+    background-size: contain;
+    height: 20px;
+    width: 20px;
+    margin-top:10px;
+    display: inline-block;
+    vertical-align: top;
+}
+.nav-cart span{
+    display: inline-block;
+    vertical-align: top;
+}
+header a {
+    color: #333;
+    text-decoration: none;
+    display: inline-block;
+    vertical-align: top;
+    line-height: 1;
+}
+header .logo {
+  float:left;
+}
+header .nav-cart {
+  float:right;
+}
+section.AtF {
+  height: 100vh;
+  max-height: 600px;
+  display: flex;
+  flex-flow: column nowrap;
+}
+.hero{
+  position: relative;
+  background: url(https://s3.amazonaws.com/viking_education/demos/viking_store_app/viking_ship_background_medium.jpg) center no-repeat;
+  background-size: cover;
+  text-align: center;
+  z-index: -1;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  flex: 6 0 auto;
+  max-height: 80vh
+  max-height: 500px
+}
+.AtF .lower-heading{
+  flex:1 0 auto;
+  max-height:20vh;
+  max-height: 100px;
+  text-align: center;
+  background-color: #333;
+  color:#fff;
+}
+.lower-heading h2{
+  font-size: 40px;
+  margin: 30px 0;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255,.75);
+  z-index:-1;
+}
+.hero h1 {
+  z-index: 1;
+  font-size: 96px;
+}
+.CTA {
+  line-height: 60px;
+  text-align: center;
+  color: #777;
+  font-size:30px;
+  border-bottom: 2px solid #ccc;
+  font-style: italic;
+}
+.inventory {
+  margin: 100px 0;
+  font-size:0;
+}
+.inventory .price{
+  height: 32px;
+  width: 75px;
+  position: absolute;
+  background: #fff;
+  color: #777;
+  right: -3px;
+  top: 43px;
+  border: 2px solid #333;
+  z-index: 2;
+  font-size: 16px;
+  line-height: 32px;
+}
+.inventory .item{
+  position:relative;
+  display: inline-block;
+  width:300px;
+  margin-left:20px;
+  background: #333;
+  text-align: center;
+  margin-bottom:40px;
+}
+.item .title{
+  font-size: 20px;
+  line-height: 48px;
+  color: #fff;
+}
+.item .image{
+  width: 294px;
+  height: 294px;
+  margin: auto;
+  line-height: 0;
+  position: relative;
+  display: block;
+}
+.item button{
+  height: 30px;
+  width: 140px;
+  background: #F6B26B;
+  background: sandybrown;
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+  border: 3px solid #000;
+  text-align: center;
+  margin: 10px auto;
+  outline:0;
+}
+.item button:active, .item button:focus {
+  outline:0;
+  border:0;
+}
+.item button:active {
+  border-top: 2px solid #444;
+  border-left: 2px solid #444;
+}
+footer {
+  font-size: 0;
+  width: 100%;
+  background: #333;
+  color:#fff;
+}
+footer .container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    padding: 20px 0;
+    max-width: 300px;
+}
+footer .title {
+  text-align: center;
+  font-size:30px;
+  color: #F6B26B;
+  color:sandybrown;
+  margin-bottom: 20px; 
+}
+footer .email, footer .phone {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-bottom: 10px;
+}
+.ico {
+  height: 20px;
+  width: 20px;
+}
+.ico.mail {
+  background: url(https://s3.amazonaws.com/viking_education/demos/viking_store_app/email_white.png) center no-repeat;
+  background-size: contain;
+}
+.ico.phone{
+  background: url(https://s3.amazonaws.com/viking_education/demos/viking_store_app/email_white.png) center no-repeat;
+  background-size: contain;
+}
+.contact {
+    font-size: 20px;
+    vertical-align: top;
+    line-height: 1;
+    margin-left: 20px;
+}
