@@ -1,7 +1,7 @@
 vikingStore.factory('cartService', [
   '$q', 'productService',
   function($q, productService){
-    var _cart = {}, _count = 0;
+    var _cart = {}, _count = { value: 0 };
 
     var newItemObj = function newItemObj(item){
       if(isNaN(item.id)){
@@ -23,7 +23,7 @@ vikingStore.factory('cartService', [
             product: {}
           };
           getProduct(_cart[item.id]);
-          _count += 1;
+          _count.value += _cart[item.id].count;
         }
         _cart[item.id].count += item.count;
         return true;
@@ -38,9 +38,9 @@ vikingStore.factory('cartService', [
 
     var removeItem = function removeItem(id){
       if (_cart[id]) {
-        _count -= 1;
+        _count.value -= _cart[id].count;
         delete _cart[id];
-        if (_count < 0) _count = 0;
+        if (_count.value < 0) _count.value = 0;
       }
     }
 
@@ -53,7 +53,9 @@ vikingStore.factory('cartService', [
     }
 
     var modifyItem = function modifyItem(id, direction){
-      _cart[id].count += (direction ? 1 : -1);
+      var value = (direction ? 1 : -1);
+      _cart[id].count += value;
+      _count.value += value;
       if(_cart[id].count <= 0){
         removeItem(id);
       }

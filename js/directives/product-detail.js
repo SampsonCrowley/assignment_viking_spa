@@ -1,6 +1,7 @@
 vikingStore.directive('productDetail', ['cartService', 'notificationService',
   function(cartService, notificationService) {
     var setup = function(s) {
+      s.newItem = {};
       s.addToCart = function() {
         s.newItem.id = s.product.id;
         if (cartService.add(s.newItem)) {
