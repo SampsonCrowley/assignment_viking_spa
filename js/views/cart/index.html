@@ -1,6 +1,6 @@
 <div class="CTA">
   <div class="container">
-    <span>Choose from among our lineup of fine axes below</span>
+    <span>View Your cart and Edit Quantities</span>
   </div>
 </div>
 <div class="cart">
@@ -14,6 +14,7 @@
             <th>Quantity</th>
             <th>Price</th>
             <th>Total</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -23,6 +24,7 @@
             <td>{{ item.count }}</td>
             <td>{{ item.product.price | currency }}</td>
             <td>{{ (item.product.price * item.count) | currency }}</td>
+            <td><a ng-click="removeItem(id)">X</a></td>
           </tr>
         </tbody>
         <tfoot>
@@ -32,6 +34,7 @@
             <td></td>
             <td>Total:</td>
             <td>{{ total.value | currency }}</td>
+            <td></td>
           </tr>
         </tfoot>
       </table>

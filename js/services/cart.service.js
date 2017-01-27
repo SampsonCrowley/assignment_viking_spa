@@ -23,8 +23,8 @@ vikingStore.factory('cartService', [
             product: {}
           };
           getProduct(_cart[item.id]);
-          _count.value += _cart[item.id].count;
         }
+        _count.value += item.count;
         _cart[item.id].count += item.count;
         return true;
       }
